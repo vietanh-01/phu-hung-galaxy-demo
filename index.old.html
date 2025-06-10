@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phú Hưng Galaxy Foods - E-commerce</title>
+    <style>
+        /* A style block is necessary to add the hover effect. */
+        .sidebar-nav-link {
+            text-decoration: none;
+            font-size: 1.1em;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+            color: #FDFBF5; /* Default link color on dark sidebar */
+        }
+        /* Style for the active/current page link */
+        .sidebar-nav-link.active {
+             background-color: rgba(212, 163, 115, 0.2);
+        }
+        .sidebar-nav-link:hover {
+            background-color: #D4A373;
+            color: #1A2D40;
+        }
+        .footer-link {
+            color: #3C3C3C;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-link:hover {
+            color: #1A2D40;
+            text-decoration: underline;
+        }
+        .social-icon {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background-color: #1A2D40;
+            color: #D4A373;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .social-icon:hover {
+            background-color: #3C3C3C;
+            color: #FDFBF5;
+        }
+    </style>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #FDFBF5; color: #3C3C3C;">
+
+    <div style="display: flex; min-height: 100vh;">
+
+        <!-- Sidebar -->
+        <aside style="width: 240px; background-color: #1A2D40; color: #FDFBF5; padding: 20px; display: flex; flex-direction: column; text-align: center;">
+            <div style="margin-bottom: 40px;">
+                <img src="assets/logo.jpg" alt="Phú Hưng Galaxy Logo" style="width: 120px; height: auto; border-radius: 50%; border: 3px solid #D4A373;">
+            </div>
+            <nav>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 15px;">
+                        <a href="#" class="sidebar-nav-link active">Trang chủ</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#categories" class="sidebar-nav-link">Danh mục</a>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#about" class="sidebar-nav-link">Về chúng tôi</a>
+                    </li>
+                </ul>
+            </nav>
+            <div style="margin-top: auto; font-size: 0.8em; text-align: center; color: #EAE3D6;">
+                <p>&copy; 2024 Phú Hưng Galaxy</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="flex-grow: 1; padding: 30px;">
+            
+            <!-- Header -->
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2 style="margin: 0; font-size: 2em; color: #1A2D40;">Thực phẩm tươi ngon mỗi ngày</h2>
+                <div style="display: flex; align-items: center;">
+                    <input type="search" placeholder="Tìm kiếm sản phẩm..." style="padding: 10px; border: 1px solid #EAE3D6; border-radius: 5px; font-size: 1em; background-color: #FFFFFF; color: #3C3C3C;">
+                    <button style="margin-left: 10px; padding: 10px; border: none; background: none; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1A2D40"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"/></svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Categories Section -->
+            <section id="categories" style="margin-bottom: 40px;">
+                <h3 style="font-size: 1.5em; color: #1A2D40; border-bottom: 2px solid #D4A373; padding-bottom: 10px; margin-bottom: 20px;">Danh Mục Sản Phẩm</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <!-- Category Card: Beef -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border: 1px solid #EAE3D6;">
+                        <div style="width: 100%; height: 120px; background-color: #EAE3D6; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Thịt Bò</div>
+                        <h4 style="margin: 15px 0; font-size: 1.2em; color: #3C3C3C;">Thịt Bò</h4>
+                    </div>
+                    <!-- Category Card: Pork -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border: 1px solid #EAE3D6;">
+                        <div style="width: 100%; height: 120px; background-color: #EAE3D6; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Thịt Heo</div>
+                        <h4 style="margin: 15px 0; font-size: 1.2em; color: #3C3C3C;">Thịt Heo</h4>
+                    </div>
+                    <!-- Category Card: Vegetable -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; border: 1px solid #EAE3D6;">
+                        <div style="width: 100%; height: 120px; background-color: #EAE3D6; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Rau Củ</div>
+                        <h4 style="margin: 15px 0; font-size: 1.2em; color: #3C3C3C;">Rau Củ</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products Section -->
+            <section id="products">
+                 <h3 style="font-size: 1.5em; color: #1A2D40; border-bottom: 2px solid #D4A373; padding-bottom: 10px; margin-bottom: 20px;">Sản Phẩm Nổi Bật</h3>
+                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                    <!-- Product Card 1 -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #EAE3D6; padding: 15px;">
+                        <div style="width: 100%; height: 150px; background-color: #EAE3D6; border-radius: 5px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Sản Phẩm</div>
+                        <h5 style="margin: 0 0 5px 0; font-size: 1.1em; color: #3C3C3C;">Ba chỉ bò Mỹ</h5>
+                        <p style="margin: 0 0 15px 0; font-size: 1.2em; font-weight: bold; color: #D4A373;">250.000₫</p>
+                        <button style="width: 100%; padding: 12px; background-color: #D4A373; color: #1A2D40; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer;">Thêm vào giỏ</button>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #EAE3D6; padding: 15px;">
+                        <div style="width: 100%; height: 150px; background-color: #EAE3D6; border-radius: 5px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Sản Phẩm</div>
+                        <h5 style="margin: 0 0 5px 0; font-size: 1.1em; color: #3C3C3C;">Sườn non heo</h5>
+                        <p style="margin: 0 0 15px 0; font-size: 1.2em; font-weight: bold; color: #D4A373;">180.000₫</p>
+                        <button style="width: 100%; padding: 12px; background-color: #D4A373; color: #1A2D40; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer;">Thêm vào giỏ</button>
+                    </div>
+                     <!-- Product Card 3 -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #EAE3D6; padding: 15px;">
+                        <div style="width: 100%; height: 150px; background-color: #EAE3D6; border-radius: 5px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Sản Phẩm</div>
+                        <h5 style="margin: 0 0 5px 0; font-size: 1.1em; color: #3C3C3C;">Cải bó xôi</h5>
+                        <p style="margin: 0 0 15px 0; font-size: 1.2em; font-weight: bold; color: #D4A373;">35.000₫</p>
+                        <button style="width: 100%; padding: 12px; background-color: #D4A373; color: #1A2D40; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer;">Thêm vào giỏ</button>
+                    </div>
+                     <!-- Product Card 4 -->
+                    <div style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #EAE3D6; padding: 15px;">
+                        <div style="width: 100%; height: 150px; background-color: #EAE3D6; border-radius: 5px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: #3C3C3C;">Ảnh Sản Phẩm</div>
+                        <h5 style="margin: 0 0 5px 0; font-size: 1.1em; color: #3C3C3C;">Nạc vai bò Úc</h5>
+                        <p style="margin: 0 0 15px 0; font-size: 1.2em; font-weight: bold; color: #D4A373;">280.000₫</p>
+                        <button style="width: 100%; padding: 12px; background-color: #D4A373; color: #1A2D40; border: none; border-radius: 5px; font-size: 1em; font-weight: bold; cursor: pointer;">Thêm vào giỏ</button>
+                    </div>
+                 </div>
+            </section>
+            
+            <!-- About Us Section -->
+            <section id="about" style="margin-top: 40px; background-color: #EAE3D6; padding: 30px; border-radius: 8px;">
+                <h3 style="font-size: 1.5em; color: #1A2D40; border-bottom: 2px solid #D4A373; padding-bottom: 10px; margin-top:0; margin-bottom: 20px;">Về Phú Hưng Galaxy</h3>
+                <p style="line-height: 1.7; margin: 0;">Chúng tôi tự hào là nhà cung cấp thực phẩm uy tín, mang đến những sản phẩm tươi ngon, an toàn và chất lượng nhất từ khắp nơi trên thế giới. Với cam kết về nguồn gốc rõ ràng và dịch vụ tận tâm, Phú Hưng Galaxy là người bạn đồng hành đáng tin cậy trong mỗi bữa ăn của gia đình bạn.</p>
+            </section>
+
+            <section id="color-palette" style="margin-top: 40px; padding: 30px; border-radius: 8px; background-color: #FFFFFF; border: 1px solid #EAE3D6;">
+                <h3 style="font-size: 1.5em; color: #1A2D40; border-bottom: 2px solid #D4A373; padding-bottom: 10px; margin-top:0; margin-bottom: 20px;">Bảng màu sử dụng</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.1em;">
+                    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background-color: #1A2D40; border-radius: 5px; margin-right: 15px; border: 1px solid #ccc;"></div>
+                        <span><strong>Xanh than (Tiêu đề, Sidebar):</strong> #1A2D40</span>
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background-color: #D4A373; border-radius: 5px; margin-right: 15px; border: 1px solid #ccc;"></div>
+                        <span><strong>Vàng cát (Nhấn, Nút bấm):</strong> #D4A373</span>
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background-color: #FDFBF5; border-radius: 5px; margin-right: 15px; border: 1px solid #ccc;"></div>
+                        <span><strong>Trắng kem (Nền chính):</strong> #FDFBF5</span>
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background-color: #EAE3D6; border-radius: 5px; margin-right: 15px; border: 1px solid #ccc;"></div>
+                        <span><strong>Beige nhạt (Nền phụ, Footer):</strong> #EAE3D6</span>
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="width: 40px; height: 40px; background-color: #3C3C3C; border-radius: 5px; margin-right: 15px; border: 1px solid #ccc;"></div>
+                        <span><strong>Xám đậm (Màu chữ):</strong> #3C3C3C</span>
+                    </li>
+                </ul>
+            </section>
+
+            <footer style="margin-top: 40px; padding: 40px; background-color: #EAE3D6; color: #3C3C3C; font-size: 0.9em;">
+                <div style="display: flex; justify-content: space-between; gap: 40px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <!-- Company Info -->
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: #1A2D40; text-transform: uppercase; font-size: 1em; margin-top: 0; margin-bottom: 15px;">Công Ty TNHH Phú Hưng Galaxy Việt Nam</h4>
+                        <p style="margin: 0 0 10px 0; line-height: 1.6;"><strong>MST:</strong> 0110163751</p>
+                        <p style="margin: 0 0 10px 0; line-height: 1.6;"><strong>Địa chỉ:</strong> Số nhà 11, Ngõ 432, Thôn vân Trai, Phố Quảng Oai, Thị Trấn Tây Đằng, Huyện Ba Vì, Thành phố Hà Nội, Việt Nam</p>
+                        <p style="margin: 0 0 10px 0; line-height: 1.6;"><strong>Email:</strong> phuhunggalaxy@gmail.com</p>
+                        <div style="margin-top: 20px;">
+                            <img src="https://via.placeholder.com/50" alt="HACCP Certificate" style="margin-right: 10px; background-color: #ccc; border-radius: 4px;">
+                            <img src="https://via.placeholder.com/50" alt="ISO Certificate" style="margin-right: 10px; background-color: #ccc; border-radius: 4px;">
+                            <img src="https://via.placeholder.com/50" alt="FDA Registered" style="margin-right: 10px; background-color: #ccc; border-radius: 4px;">
+                        </div>
+                    </div>
+            
+                    <!-- Quick Links -->
+                    <div style="flex: 1; min-width: 150px;">
+                        <h4 style="color: #1A2D40; text-transform: uppercase; font-size: 1em; margin-top: 0; margin-bottom: 15px;">Liên kết nhanh</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 10px;"><a href="#" class="footer-link">Giới Thiệu</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#categories" class="footer-link">Danh mục sản phẩm</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#about" class="footer-link">Về chúng tôi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="#" class="footer-link">Chính sách</a></li>
+                        </ul>
+                    </div>
+            
+                    <!-- Email Subscription -->
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: #1A2D40; text-transform: uppercase; font-size: 1em; margin-top: 0; margin-bottom: 15px;">Đăng ký nhận email</h4>
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <input type="email" placeholder="Email của bạn" style="flex-grow: 1; padding: 10px; border: 1px solid #3C3C3C; background-color: #FDFBF5; color: #3C3C3C; border-radius: 5px 0 0 5px; border-right: none;">
+                            <button style="padding: 10px 15px; background-color: #D4A373; color: #1A2D40; border: none; border-radius: 0 5px 5px 0; cursor: pointer; font-weight: bold;">Gửi</button>
+                        </div>
+                        <div>
+                            <a href="#" class="social-icon">f</a>
+                            <a href="#" class="social-icon">G</a>
+                            <a href="#" class="social-icon">in</a>
+                        </div>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #D4A373; padding-top: 20px; text-align: center; font-size: 0.8em; color: #3C3C3C;">
+                    Copyright © 2024 CÔNG TY TNHH PHÚ HƯNG GALAXY VIỆT NAM
+                </div>
+            </footer>
+        </main>
+
+    </div>
+
+</body>
+</html>

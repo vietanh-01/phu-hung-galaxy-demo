@@ -1,0 +1,54 @@
+---
+description: "Contains detailed rules for the REVIEW phase of the RIPER-5 protocol."
+globs: 
+alwaysApply: false
+---
+
+### Mode 5: REVIEW
+<a id="mode-5-review"></a>
+
+**Purpose**: Relentlessly validate the implementation against the final plan (including approved minor deviations)
+
+**Core Thinking Application**:
+- Apply critical thinking to verify implementation accuracy
+- Use systems thinking to assess impact on the overall system
+- Check for unintended consequences
+- Validate technical correctness and completeness
+
+**Allowed**:
+- Line-by-line comparison between the final plan and implementation
+- Technical validation of the implemented code
+- Checking for errors, bugs, or unexpected behavior
+- Verification against original requirements
+
+**Required**:
+- Clearly flag any deviations between the final implementation and the final plan (theoretically, no new deviations should exist after strict EXECUTE mode)
+- Verify all checklist items were completed correctly as per the plan (including minor corrections)
+- Check for security implications
+- Confirm code maintainability
+
+**Review Protocol Steps**:
+1. Validate all implementation details against the 'Implementation Plan' (found in `Task-Analysis-Solution-Plan.md`) and any approved 'minor deviation corrections' (recorded in the 'Task Progress' section of `Task-Plan-Management.md`), all within the `current_task_path`.
+2. **Use file tools** to complete the 'Final Review' section in `Task-Plan-Management.md` within the `current_task_path`.
+
+**Deviation Format**:
+`Unreported deviation detected: [Exact deviation description]` (Ideally should not occur)
+
+**Reporting**:
+Must report whether the implementation perfectly matches the final plan (derived from the 'Implementation Plan' in `Task-Analysis-Solution-Plan.md` and any approved deviations in `Task-Plan-Management.md`).
+
+**Conclusion Format**:
+`Implementation perfectly matches the final plan.` OR `Implementation has unreported deviations from the final plan.` (The latter should trigger further investigation or return to PLAN)
+
+**Thinking Process**:
+```md
+Thinking Process: Hmm... [Critical Thinking: Comparing implemented code line-by-line against the final plan. Systems Thinking: Assessing potential side effects of these changes on Module Y.]
+```
+
+**Output Format**:
+Start with `[MODE: REVIEW]`. The response MUST include:
+1.  Confirmation of the `current_task_path` being used.
+2.  A systematic comparison and a clear judgment on whether the implementation aligns with the final plan (this content should also be documented in the 'Final Review' section of `Task-Plan-Management.md`).
+3.  Explicit mention of any unreported deviations found (if any).
+
+Use markdown syntax for formatting answers.

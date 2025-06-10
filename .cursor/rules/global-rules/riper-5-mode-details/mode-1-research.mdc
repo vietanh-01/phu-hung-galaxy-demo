@@ -1,0 +1,64 @@
+---
+description: "Contains detailed rules for the RESEARCH phase of the RIPER-5 protocol."
+globs: 
+alwaysApply: false
+---
+
+### Mode 1: RESEARCH
+<a id="mode-1-research"></a>
+
+**Purpose**: Information gathering and deep understanding
+
+**Core Thinking Application**:
+- Systematically decompose technical components
+- Clearly map known/unknown elements
+- Consider broader architectural impacts
+- Identify key technical constraints and requirements
+
+**Allowed**:
+- Reading files
+- Asking clarifying questions
+- Understanding code structure
+- Analyzing system architecture
+- Identifying technical debt or constraints
+- If a new task is being initiated and no `current_task_path` is set, performing "Task Folder Initialization" as defined in `riper-5-protocol-part1.md` (which includes creating the task folder, populating it with `Task-Overview.md`, `Task-Analysis-Solution-Plan.md`, `Task-Plan-Management.md` from templates, and filling initial details in `Task-Overview.md`).
+- If resuming an existing task (e.g., when the user provides a specific `task_path`), ensure `current_task_path` is set to that path and `Task-Overview.md` is read from it.
+- Using file tools to write or update the 'Analysis' section within `Task-Analysis-Solution-Plan.md` located in the `current_task_path`.
+
+**Forbidden**:
+- Making recommendations
+- Implementing any changes
+- Planning
+- Any implication of action or solution
+
+**Research Protocol Steps**:
+1.  **Task Context Establishment**:
+    *   If initiating a new task, ensure "Task Folder Initialization" (as per `riper-5-protocol-part1.md`) is completed. This sets the `current_task_path` and populates `Task-Overview.md`.
+    *   If resuming an existing task (e.g., when the user provides a specific `task_path`), ensure `current_task_path` is set to that path and `Task-Overview.md` is read from it.
+2.  **Information Gathering & Analysis**:
+    *   Thoroughly understand the user's request and objectives from `Task-Overview.md` and any direct user input.
+    *   Analyze task-related code, existing documentation, or other relevant sources.
+        *   Identify core files/functions/concepts.
+        *   Trace code/data flow.
+    *   Identify key technical constraints, requirements, ambiguities, or missing information.
+3.  **Documentation in Task Folder**:
+    *   Document all significant findings, observations, and identified constraints in the 'Analysis' section of `Task-Analysis-Solution-Plan.md` within the `current_task_path`.
+4.  **Clarification (if needed)**:
+    *   Formulate specific clarifying questions for the user if critical information is missing or ambiguous.
+
+**Thinking Process**:
+```md
+Thinking Process: Hmm... [Systems Thinking: Analyzing dependencies between File A and Function B. Critical Thinking: Identifying potential edge cases in Requirement Z.]
+```
+
+**Output Format**:
+Start with `[MODE: RESEARCH]`. The response MUST include:
+1.  The completed **Thinking Process** section.
+2.  Confirmation of the `current_task_path` being used.
+3.  A summary of information gathered, referencing `Task-Overview.md` if applicable.
+4.  Key findings and observations (which should also be documented in `Task-Analysis-Solution-Plan.md`).
+5.  Any identified ambiguities or missing information critical for proceeding.
+6.  A list of clarifying questions for the user, if any.
+Use markdown syntax. Avoid bullet points for main narrative unless listing specific findings or questions.
+
+**Duration**: Automatically transitions to INNOVATE mode upon completion of research.
