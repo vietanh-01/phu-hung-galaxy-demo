@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Model for Admin Users
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String // In a real app, this should be a hash
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model for Product Categories
+model Category {
+  id       String    @id @default(cuid())
+  name     String    @unique
+  slug     String    @unique
+  products Product[]
+}
+
+// Model for Products
+model Product {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String? @db.Text
+  price       Decimal @db.Decimal(12, 2)
+  imageUrl    String
+  batchCode   String?
+  rating      Float?
+  reviewCount Int?
+  statusTag   String? // e.g., "MỚI", "BÁN CHẠY"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
+}
+
+// Model for Contact Form Submissions
+model ContactSubmission {
+  id          String   @id @default(cuid())
+  companyName String
+  phone       String
+  email       String
+  message     String   @db.Text
+  isRead      Boolean  @default(false)
+  readAt      DateTime?
+  createdAt   DateTime @default(now())
+}
+
+// Model for Partners
+model Partner {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  logoUrl   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Model for Content Blocks - flexible content management
+model ContentBlock {
+  id         String   @id @default(cuid())
+  blockType  String   // e.g., "hero", "about", "stats", "contact"
+  identifier String   // unique identifier within block type
+  title      String?  // optional title field
+  content    String?  @db.Text // main content (can be rich text)
+  subtitle   String?  @db.Text // optional subtitle
+  data       Json?    // flexible JSON field for additional data
+  isActive   Boolean  @default(true)
+  order      Int      @default(0) // for ordering blocks
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([blockType, identifier])
+}
